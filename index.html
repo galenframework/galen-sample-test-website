@@ -8,6 +8,7 @@
 
         <!-- Bootstrap -->
         <link href="css/bootstrap.min.css" rel="stylesheet">
+        <link href="css/bootstrap-theme.min.css" rel="stylesheet">
         <link href="main.css" rel="stylesheet">
 
         <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -21,22 +22,29 @@
     <body>
 
         <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+        <script src="js/jquery-1.8.3.min.js"></script>
         <!-- Include all compiled plugins (below), or include individual files as needed -->
         <script src="js/bootstrap.min.js"></script>
         <script src="js/myapp.js"></script>
         <script>
             $(function () {
                 App.init();
-                //App.showWelcomePage();
-                App.showMyNotesPage();
+                App.showWelcomePage();
+                // App.showLoginPage();
             });
         </script>
 
-        <div id="content">
-        
+        <div id="header">
+            <h1><img src="images/header-icon.png"/> Sample Website <span class="not-on-mobile not-on-tablet">for Galen Framework</span></h1>
+        </div>
+        <div id="middle">
+            <div id="content">
+            
+            </div>
         </div>
         <div id="footer">
+            <div class="signature">
+            </div>
         </div>
 
         <script id="tpl-welcome-page" type="text/x-handlebars-template">
@@ -49,28 +57,30 @@
         </script>
 
         <script id="tpl-login-page" type="text/x-handlebars-template">
-            <h2>Login page</h2>
+            <div class="dialog-panel">
+                <h2>Login</h2>
 
-            <p>
-                <input type="text" class="form-control" placeholder="Username" name="login.username">
-            </p>
-            <p>
-                <input type="text" class="form-control" placeholder="Password" name="login.password">
-            </p>
+                <p>
+                    <input type="text" class="form-control" placeholder="Username" name="login.username">
+                </p>
+                <p>
+                    <input type="text" class="form-control" placeholder="Password" name="login.password">
+                </p>
 
-            <div id="login-error-message" class="error-message" style="display: none"></div>
+                <div id="login-error-message" class="alert alert-danger" style="display: none"></div>
 
-            <p>
-                <button class="btn btn-lg btn-primary" type="button" onclick="App.login()">Login</button>
-                <button class="btn btn-lg btn-default" type="button" onclick="App.showWelcomePage()">Cancel</button>
-            </p>
+                <p>
+                    <button class="btn btn-lg btn-primary" type="button" onclick="App.login()">Login</button>
+                    <button class="btn btn-lg btn-default" type="button" onclick="App.showWelcomePage()">Cancel</button>
+                </p>
+            </div>
         </script>
 
         <script id="tpl-my-notes-page" type="text/x-handlebars-template">
             <h2>My Notes</h2>
             <div class="list-group">
                 {{#each notes}}
-                <a href="#" class="list-group-item">
+                <a href="javascript: App.showMyNote({{id}});" class="list-group-item">
                     <h4 class="list-group-item-heading">{{title}}</h4>
                     <p class="list-group-item-text">{{shortText description}}</p>
                 </a>
@@ -80,9 +90,17 @@
         </script>
 
         <script id="tpl-add-note-page" type="text/x-handlebars-template">
-            <h2>Add note</h2>
+            <h2>{{heading}}</h2>
+
             <p>
-                <button class="btn btn-lg btn-primary" type="button" onclick="App.addNote()">Add</button>
+            <input type="text" class="form-control" placeholder="Title" name="note.title" value="{{title}}">
+            </p>
+            <p>
+            <textarea rows="10" class="form-control" placeholder="Description" name="note.description">{{description}}</textarea>
+            </p>
+            <div id="note-error-message" class="alert alert-danger" style="display: none"></div>
+            <p>
+                <button class="btn btn-lg btn-primary" type="button" onclick="App.addNote()">{{operation}}</button>
                 <button class="btn btn-lg btn-default" type="button" onclick="App.showMyNotesPage()">Cancel</button>
             </p>
         </script>
