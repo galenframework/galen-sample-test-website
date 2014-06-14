@@ -2,6 +2,7 @@ body {
     background: #333;
 }
 .middle-wrapper {
+    position: relative;
     max-width: 900px;
     margin: auto;
 }
@@ -39,15 +40,16 @@ body {
 }
 
 #header h1 {
+    display: inline-block;
     position: relative;
-    margin: 20px;
-    padding-left: 50px;
+    margin-left: 70px;
 }
 
 #header img {
+    display: inline-block;
     position: absolute;
-    left: -10px;
-    top: -3px;
+    top: 13px;
+    left: 0px;
 }
 
 
