@@ -1,6 +1,36 @@
 body {
     background: #333;
 }
+.middle-wrapper {
+    max-width: 900px;
+    margin: auto;
+}
+#menu {
+    background: #2d6ca2;
+    margin: 0;
+    color: white;
+}
+#menu ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+#menu li {
+    display: inline-block;
+}
+#menu ul:after {
+    clear: both;
+}
+#menu li a {
+    min-width: 100px;
+    font-size: 1.2em;
+    color: white;
+    padding: 20px;
+    display: inline-block;
+}
+#menu li a:hover {
+    background: #205380;
+}
 
 #header {
     position: relative;
@@ -9,13 +39,14 @@ body {
 }
 
 #header h1 {
+    position: relative;
     margin: 20px;
     padding-left: 50px;
 }
 
 #header img {
     position: absolute;
-    left: 10px;
+    left: -10px;
     top: -3px;
 }
 
@@ -58,6 +89,15 @@ body {
     button {
         width: 100%;
         margin-top: 10px;
+    }
+    #menu {
+        width: 100%;
+    }
+    #menu li {
+        width: 49%;
+    }
+    #menu li a {
+        width: 100%;
     }
 }
 @media (max-width: 800px) {
