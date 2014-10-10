@@ -1,5 +1,5 @@
 body {
-    background: #333;
+    background: url('images/header-background.png');
 }
 .middle-wrapper {
     position: relative;
@@ -7,7 +7,7 @@ body {
     margin: auto;
 }
 #menu {
-    background: #2d6ca2;
+    background: url("images/menu-background.png");
     margin: 0;
     color: white;
 }
@@ -30,7 +30,7 @@ body {
     display: inline-block;
 }
 #menu li a:hover {
-    background: #205380;
+    background: url('images/menu-highlight.png');
 }
 
 #header {
@@ -43,6 +43,7 @@ body {
     display: inline-block;
     position: relative;
     margin-left: 70px;
+    text-shadow: 1px 1px 1px #000000;
 }
 
 #header img {
