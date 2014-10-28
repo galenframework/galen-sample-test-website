@@ -108,3 +108,10 @@ body {
         display: none;
     }
 }
+
+
+.btn-primary:hover {
+    background: #22A30B;
+    color: #fff;
+    border-color: #1A7509;
+}
