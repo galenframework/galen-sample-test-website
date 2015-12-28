@@ -81,7 +81,9 @@ body {
 #footer {
     background: #333;
     color: white;
-    min-height: 200px;
+}
+#footer .middle-wrapper {
+    min-height: 150px;
 }
 #footer .footer-signature {
     padding: 20px;
