@@ -83,6 +83,10 @@ body {
     color: white;
     min-height: 200px;
 }
+#footer .footer-signature {
+    padding: 20px;
+    text-align: right;
+}
 
 @media (min-width: 501px) {
     .dialog-panel {
