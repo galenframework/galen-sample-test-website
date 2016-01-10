@@ -27,10 +27,23 @@
         <script src="js/bootstrap.min.js"></script>
         <script src="js/myapp.js?v=3"></script>
         <script>
+            function onHashChange() {
+                var hash = window.location.hash;
+                if (hash === "#login") {
+                    App.showLoginPage();
+                    return true;
+                }
+
+                return false;
+            }
+
+
             $(function () {
                 App.init();
-                App.showWelcomePage();
-                // App.showLoginPage();
+                if (!onHashChange()) {
+                    App.showWelcomePage();
+                }
+                window.onhashchange = onHashChange;
             });
         </script>
 
