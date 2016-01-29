@@ -125,7 +125,14 @@ body {
     }
 }
 
+.btn-default {
+    background: #f0f0f0;
+    color: black;
+}
 
+.btn-primary {
+    background: #2d6ca2;
+}
 .btn-primary:hover {
     background: #22A30B;
     color: #fff;
